@@ -482,7 +482,10 @@ const controls = {
         set_subpixel(obs, v);
     }),
     B30: new Digital((v) => {
-        if (v) reset_random_encoder_group();
+        if (v) {
+            reset_random_encoder_group();
+            reset_transform();
+        }
     }),
     B31: new Digital((v) => {
         set_ripple(obs, v);
